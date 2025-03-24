@@ -1,0 +1,15 @@
+# Node.js
+client/node_modules/
+client/dist/
+
+# Python
+server/venv/
+server/__pycache__/
+server/*.pyc
+server/*.pyo
+
+# SQLite database
+server/core/db.sqlite3
+
+# Environment variables
+.env

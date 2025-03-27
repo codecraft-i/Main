@@ -7,6 +7,7 @@ from rest_framework.routers import DefaultRouter
 from .views import *
 
 router = DefaultRouter()
+router.register(r'countries', CountryViewSet)
 router.register(r'universities', UniversityViewSet)
 router.register(r'why-choose', WhyChooseViewSet)
 router.register(r'extra-paragraphs', ExtraParagraphViewSet)

@@ -2,12 +2,17 @@
 from rest_framework import serializers
 
 # Local modules
-from backend.models import University, WhyChoose, ExtraParagraph, ShortInfo
+from backend.models import *
+
+class CountrySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Country
+        fields = ['id', 'name']
 
 class WhyChooseSerializer(serializers.ModelSerializer):
     class Meta:
         model = WhyChoose
-        fields = ['text']
+        fields = ['title', 'text']
 
 class ExtraParagraphSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,6 +30,8 @@ class UniversitySerializer(serializers.ModelSerializer):
     why_choose = WhyChooseSerializer(many=True, read_only=True)
     extra_paragraphs = ExtraParagraphSerializer(many=True, read_only=True)
     short_info = ShortInfoSerializer(many=True, read_only=True)
+
+    country = CountrySerializer()
 
     class Meta:
         model = University

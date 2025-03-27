@@ -13,7 +13,7 @@ class UniversityAdmin(admin.ModelAdmin):
 
 @admin.register(WhyChoose)
 class WhyChooseAdmin(admin.ModelAdmin):
-    list_display = ('university', 'text')
+    list_display = ('university', 'title', 'text')
     search_fields = ('university__name', 'text')
 
 @admin.register(ExtraParagraph)
@@ -27,3 +27,5 @@ class ShortInfoAdmin(admin.ModelAdmin):
     search_fields = ('university__name', 'name')
     list_filter = ('priority',)
     ordering = ('priority',)
+
+admin.site.register(Country)

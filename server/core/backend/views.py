@@ -14,6 +14,10 @@ from .models import *
 # Local API Path
 from .API.serializers import *
 
+class CountryViewSet(viewsets.ModelViewSet):
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+
 class UniversityViewSet(viewsets.ModelViewSet):
     queryset = University.objects.all().order_by('-ranking')
     serializer_class = UniversitySerializer

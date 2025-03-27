@@ -1,5 +1,6 @@
-.img > img {
-    width: 200px;
+.uniBox {
+    max-width: 100%;
+    width: 100%;
     height: auto;
-    background-size: cover;
+    display: flex;
 }
